@@ -1,7 +1,5 @@
 #OECD_API.R
 
-# install.packages("plumber")
-# install.packages("readstata13")
 library("foreign")
 library(plumber)
 
@@ -15,7 +13,7 @@ library(plumber)
 #* @get /oecdfpc
 
 oecdfpc <- function(a, b, c, d, e, f) {
-    file <- paste("C:/Users/TomE/Dropbox (NIDI)/GGP/SSHOC/OECD/OECD_", a, ".dta", sep = "")
+    file <- paste("OECD_", a, ".dta", sep = "")
     dat <- read.dta(file)
     oecdfpc <- dat[ which(dat$single==as.numeric(f)
                              & dat$kids==as.numeric(b)
